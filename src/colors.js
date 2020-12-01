@@ -147,7 +147,7 @@ const highNumbers = {
 export const getColorClass = (row, column, active) => {
   const color = colors[row];
   const bgNumber = active ? highNumbers[column] : lowNumbers[column];
-  const textNumber = active ? lowNumbers[column] : highNumbers[column];
+  const textNumber = active ? 100 : highNumbers[column];
 
   return `bg-${color}-${bgNumber}  text-${color}-${textNumber}`;
 };
