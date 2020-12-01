@@ -1,54 +1,43 @@
 import React from "react";
-import Card from "./Card";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { getInitialState } from "../values";
+import { classnames } from "../utils";
 
-const Board = ({ cards, gutter }) => {
+const Board = () => {
+  const [state, setState] = useLocalStorage("state", getInitialState());
+
+  const toggle = (key) =>
+    setState({
+      ...state,
+      [key]: !state[key],
+    });
+
   return (
-    <div className="board">
+    <div className="">
       <h1>Holiday Movie Bingo!</h1>
-      {cards.map((row, index) => (
-        <div className="row" key={`row-${index}`}>
-          {row.map((value, cardIndex) => (
-            <Card key={`card-${index}-${cardIndex}`} gutter={gutter}>
-              {value}
-            </Card>
-          ))}
-        </div>
-      ))}
-      <style jsx>{`
-        h1 {
-          margin-bottom: 40px;
-          font-size: 40px;
-        }
+      <ul className="grid grid-cols-5 gap-0">
+        {Object.entries(state).map(([key, value]) => {
+          const buttonClassName = classnames(
+            "h-full flex items-center justify-center w-full",
+            "text-xs md:text-sm lg:text-normal",
+            "p-4",
+            !value && "bg-gray-100",
+            value && "bg-gray-800 text-white"
+          );
 
-        .board {
-          padding: ${gutter}px;
-          max-width: 900px;
-          margin: 100px auto;
-        }
-
-        .row {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: ${gutter}px;
-          min-height: calc(15vh - ${gutter}px);
-        }
-
-        @supports ((background-clip: text) or (-webkit-background-clip: text))
-          and
-          (
-            (text-fill-color: transparent) or
-              (-webkit-text-fill-color: transparent)
-          ) {
-          h1 {
-            background-image: linear-gradient(90deg, #ff2b2b 0%, #0eec4b 70%);
-            background-size: 400px;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-fill-color: transparent;
-          }
-        }
-      `}</style>
+          return (
+            <li key={key}>
+              <button
+                type="button"
+                className={buttonClassName}
+                onClick={() => toggle(key)}
+              >
+                {key}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

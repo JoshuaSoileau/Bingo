@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+
+.description-item {
+  font-size: 14px;
+}
+
+.description-item:empty + .description-item {
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: -5px;
+  font-family: "Noto Sans";
+}
+
+@tailwind utilities;

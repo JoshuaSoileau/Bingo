@@ -1,4 +1,4 @@
-export default [
+const values = [
   "Anti-Christmas character",
   "Blatant product placement",
   "Christmas caroling",
@@ -46,5 +46,35 @@ export default [
   "Personal Assistant is best friend",
   '"I\'m sorry, I have to take this"',
   "An awkward proposal",
-  "Christmas tree lighting"
+  "Christmas tree lighting",
 ];
+
+function getRandom(arr, n) {
+  var result = new Array(n),
+    len = arr.length,
+    taken = new Array(len);
+  if (n > len)
+    throw new RangeError("getRandom: more elements taken than available");
+  while (n--) {
+    var x = Math.floor(Math.random() * len);
+    result[n] = arr[x in taken ? taken[x] : x];
+    taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
+}
+
+export const getInitialState = () => {
+  return getRandom(values, 25).reduce(
+    (total, current) => ({
+      ...total,
+      [current]: false,
+    }),
+    {}
+  );
+};
+
+window.getInitialState = getInitialState;
+window.getRandom = getRandom;
+window.values = values;
+
+export default { getInitialState };
