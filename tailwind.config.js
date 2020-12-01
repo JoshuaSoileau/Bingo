@@ -52,7 +52,7 @@ module.exports = {
         blue: colors.blue,
         cyan: colors.cyan,
         teal: colors.teal,
-        "light-blue": colors.lightBlue,
+        lightBlue: colors.lightBlue,
       },
       fontFamily: {
         "sans-special": ["Noto Sans", ...defaultTheme.fontFamily.sans],
