@@ -30,7 +30,7 @@ function App() {
       />
 
       <h1 className="px-4 font-serif font-extrabold text-lg md:text-5xl lg:text-6xl text-red-600 flex justify-between">
-        <strong>Holiday Movie Bingo!</strong>
+        <strong>Hallmark Movie Bingo!</strong>
         <button
           type="button"
           onClick={() => {
