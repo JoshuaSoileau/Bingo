@@ -1,5 +1,6 @@
 const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 let makeShadow = (name, rgb) => {
   let obj = {};
@@ -46,6 +47,13 @@ module.exports = {
           .map(([key, value]) => makeShadow(key, value))
           .reduce((acc, cur) => ({ ...acc, ...cur }), {}),
       }),
+      colors: {
+        indigo: colors.indigo,
+        blue: colors.blue,
+        cyan: colors.cyan,
+        teal: colors.teal,
+        "light-blue": colors.lightBlue,
+      },
       fontFamily: {
         "sans-special": ["Noto Sans", ...defaultTheme.fontFamily.sans],
         sans: ["Varela Round", ...defaultTheme.fontFamily.sans],
