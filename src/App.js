@@ -5,6 +5,7 @@ import { getInitialState } from "./values";
 import { classnames } from "./utils";
 import { getColorClass } from "./colors";
 import "./styles/tailwind.css";
+import Snow from "./Snow";
 
 function App() {
   const [state, setState] = useLocalStorage("state", getInitialState());
@@ -18,7 +19,7 @@ function App() {
     });
 
   return (
-    <div className="flex flex-col min-h-screen justify-evenly">
+    <div className="flex flex-col min-h-screen justify-evenly bg-gradient-to-b from-lightBlue-200 to-indigo-300">
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
@@ -29,8 +30,8 @@ function App() {
         rel="stylesheet"
       />
 
-      <h1 className="px-4 font-serif font-extrabold text-lg md:text-5xl lg:text-6xl text-red-600 flex justify-between">
-        <strong>Hallmark Movie Bingo!</strong>
+      <h1 className="px-4 font-serif font-extrabold text-xl sm:text-3xl md:text-5xl lg:text-6xl text-red-600 flex justify-between">
+        <strong className="headline">Hallmark Movie Bingo!</strong>
         <button
           type="button"
           onClick={() => {
@@ -53,7 +54,7 @@ function App() {
           const buttonClassName = classnames(
             "h-full flex items-center text-left w-full",
             "text-xs md:text-sm lg:text-normal",
-            "p-4 md:py-8 lg:py-12",
+            "p-2 sm:p-4 md:py-8 lg:py-12",
             "focus:outline-none",
             !value && "bg-gray-100",
             value && "bg-gray-800 text-white",
@@ -73,6 +74,8 @@ function App() {
           );
         })}
       </ul>
+
+      <Snow />
     </div>
   );
 }

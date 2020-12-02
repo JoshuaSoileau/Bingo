@@ -1,15 +1,25 @@
 @tailwind base;
 @tailwind components;
 
-.description-item {
-  font-size: 14px;
+.headline {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    white,
+    white 1rem,
+    red 1rem,
+    red 2rem
+  );
+  background-size: 200% 200%;
+  animation: barberpole 40s linear infinite;
+
+  background-clip: text;
+  -webkit-text-fill-color: green;
 }
 
-.description-item:empty + .description-item {
-  font-size: 14px;
-  font-weight: 900;
-  margin-bottom: -5px;
-  font-family: "Noto Sans";
+@keyframes barberpole {
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 @tailwind utilities;
