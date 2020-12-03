@@ -47,6 +47,15 @@ const values = [
   '"I\'m sorry, I have to take this"',
   "An awkward proposal",
   "Christmas tree lighting",
+  "Sudden food fight",
+  "Spontaneous trip",
+  "Big romantic gesture causes change of heart",
+  "Brief social/political statement",
+  "Awkward love triangle",
+  "Over exaggerated grand entrance",
+  "Horrible fake accent",
+  "Devious family member",
+  "Close coworker/friend is secret enemy",
 ];
 
 function getRandom(arr, n) {
