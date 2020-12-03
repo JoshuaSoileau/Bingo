@@ -34,7 +34,7 @@ function App() {
       <Octocat />
 
       <div className="max-w-4xl mx-auto">
-        <h1 className="px-4 font-serif font-extrabold text-5xl lg:text-6xl text-red-600 flex flex-col md:flex-row justify-between items-start mb-12">
+        <h1 className="px-4 md:px-0 font-serif font-extrabold text-5xl lg:text-6xl text-red-600 flex flex-col md:flex-row justify-between items-start mb-8">
           <strong className="headline">Hallmark Movie Bingo!</strong>
           <button
             className="block my-6 md:my-0 order-first md:order-last"
@@ -50,6 +50,15 @@ function App() {
             </span>
           </button>
         </h1>
+
+        <p
+          className="text-lg md:text-2xl text-lightBlue-700 mb-12  px-4 md:px-0"
+          style={{ filter: "drop-shadow(-2px 1px 0px white)" }}
+        >
+          Because these movies are just unbearable
+          <br className="hidden md:block" />
+          to watch otherwise...
+        </p>
 
         <ul className="grid grid-cols-5 grid-rows-5 gap-0">
           {Object.entries(state).map(([key, value], index) => {

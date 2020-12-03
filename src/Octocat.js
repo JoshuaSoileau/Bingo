@@ -8,6 +8,7 @@ const Octocat = () => {
       aria-label="View source on GitHub"
     >
       <svg
+        className="octocat-svg"
         width="80"
         height="80"
         viewBox="0 0 250 250"
@@ -34,7 +35,7 @@ const Octocat = () => {
           className="octo-body"
         ></path>
       </svg>
-      <style>{`.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}`}</style>
+      <style>{`.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}.octocat-svg{filter: drop-shadow(-3px 3px 7px white);}`}</style>
     </a>
   );
 };
