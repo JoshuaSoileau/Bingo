@@ -61,7 +61,9 @@ module.exports = {
       fontSize: {
         "2xs": ["0.7rem", ".85rem"],
       },
-      minWidth: {
+      minWidth: (theme) => ({
+        ...theme("spacing"),
+
         0: "0",
         "1/6": "16.66%",
         "1/4": "25%",
@@ -69,9 +71,12 @@ module.exports = {
         "1/2": "50%",
         "1/3": "33.33%",
         "2/3": "66.66%",
+
         full: "100%",
-      },
-      maxWidth: {
+      }),
+      maxWidth: (theme) => ({
+        ...theme("spacing"),
+
         0: "0",
         "1/6": "16.66%",
         "1/4": "25%",
@@ -79,12 +84,14 @@ module.exports = {
         "1/2": "50%",
         "1/3": "33.33%",
         "2/3": "66.66%",
+
         full: "100%",
-      },
-      spacing: {
+      }),
+      spacing: (theme) => ({
+        ...theme("screens"),
         "1/2": "50%",
         "2/3": "66.66%",
-      },
+      }),
       transitionProperty: {
         height: "height",
         spacing: "margin, padding",
