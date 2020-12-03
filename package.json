@@ -17,10 +17,10 @@
     "tailwindcss": "^2.0.1"
   },
   "scripts": {
-    "dev:build:style": "tailwind build ./src/styles/index.css -o ./src/styles/tailwind.css",
-    "build:style": "NODE_ENV=production tailwindcss build ./src/styles/index.css -o ./src/styles/tailwind.css",
-    "start": "npm run dev:build:style && react-app-rewired start",
-    "build": "npm run build:style && react-app-rewired build",
+    "dev:styles": "tailwind build ./src/styles/index.css -o ./src/styles/tailwind.css",
+    "build:styles": "NODE_ENV=production tailwindcss build ./src/styles/index.css -o ./src/styles/tailwind.css",
+    "start": "npm run dev:styles && react-app-rewired start",
+    "build": "npm run build:styles && react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },

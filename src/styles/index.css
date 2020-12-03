@@ -13,7 +13,8 @@
   animation: barberpole 40s linear infinite;
 
   background-clip: text;
-  -webkit-text-fill-color: green;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 20px white, 0 0px 0px rgba(255, 255, 255, 0.3);
 }
 
 @keyframes barberpole {
