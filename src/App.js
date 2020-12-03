@@ -6,6 +6,7 @@ import { classnames } from "./utils";
 import { getColorClass } from "./colors";
 import "./styles/tailwind.css";
 import Snow from "./Snow";
+import Octocat from "./Octocat";
 
 function App() {
   const [state, setState] = useLocalStorage("state", getInitialState());
@@ -19,7 +20,7 @@ function App() {
     });
 
   return (
-    <div className="flex flex-col min-h-screen justify-evenly bg-gradient-to-b from-lightBlue-200 to-indigo-300">
+    <div className="flex flex-col min-h-screen justify-evenly bg-gradient-to-b from-lightBlue-200 to-indigo-300 relative">
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
@@ -29,6 +30,8 @@ function App() {
         href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
         rel="stylesheet"
       />
+
+      <Octocat />
 
       <div className="max-w-4xl mx-auto">
         <h1 className="px-4 font-serif font-extrabold text-5xl lg:text-6xl text-red-600 flex flex-col md:flex-row justify-between items-start mb-12">
