@@ -3,7 +3,7 @@ import tw, { styled, css } from "twin.macro";
 
 const Background = () => {
   return (
-    <div tw="fixed bottom-0 right-0 left-0 z-0">
+    <div tw="fixed -bottom-32 md:bottom-0 right-0 left-0 z-0  hidden 2xs:block">
       {/** Big hill */}
       <div tw="relative h-36 w-full bg-white">
         &nbsp;

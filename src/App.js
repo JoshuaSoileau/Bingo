@@ -39,11 +39,8 @@ function App() {
           </button>
         </h1>
 
-        <p
-          tw="text-lg md:text-2xl text-lightBlue-700 mb-12  px-4 md:px-0"
-          style={{ filter: "drop-shadow(-2px 1px 0px white)" }}
-        >
-          Because these movies are just unbearable
+        <p tw="text-lg md:text-2xl text-white mb-12  px-4 md:px-0">
+          Because these movies are just unbearable&nbsp;
           <br tw="hidden md:block" />
           to watch otherwise...
         </p>

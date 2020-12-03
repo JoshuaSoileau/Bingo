@@ -27,6 +27,12 @@ module.exports = {
   purge: ["./src/**/*.js"],
   theme: {
     extend: {
+      screens: {
+        "3xs": "320px",
+        "2xs": "360px",
+        xs: "480px",
+      },
+
       boxShadow: (theme) => ({
         xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
         sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
