@@ -16,4 +16,4 @@ The snowfall is created with HTML Canvas.
 
 ### Contribute a board tile:
 
-If you have an idea for something that should be added as a tile, just submit a PR with a modification to [this file](#)!
+If you have an idea for something that should be added as a tile, just submit a PR with a modification to [https://github.com/JoshuaSoileau/HolidayMovieBingo/edit/master/src/values.js](#)!
