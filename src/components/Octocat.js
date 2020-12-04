@@ -4,7 +4,7 @@ const Octocat = () => {
   return (
     <a
       href="https://github.com/JoshuaSoileau/Bingo"
-      className="github-corner"
+      className="github-corner absolute top-0 right-0 z-20"
       aria-label="View source on GitHub"
     >
       <svg
