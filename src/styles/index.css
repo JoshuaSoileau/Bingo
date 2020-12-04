@@ -24,4 +24,8 @@
   }
 }
 
+.prose a {
+  color: #dd2020;
+}
+
 @tailwind utilities;

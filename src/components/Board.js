@@ -1,12 +1,8 @@
 import React from "react";
 import { getColorClass } from "../colors";
-import { useLocalStorage } from "../hooks/useLocalStorage";
 import { classnames } from "../utils";
-import { getInitialState } from "../values";
 
-const Board = () => {
-  const [state, setState] = useLocalStorage("state", getInitialState());
-
+const Board = ({ state, setState }) => {
   const toggle = (key) =>
     setState({
       ...state,
