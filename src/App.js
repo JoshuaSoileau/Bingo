@@ -21,7 +21,7 @@ function App() {
       <Head />
       <Octocat />
 
-      <div tw="max-w-4xl mx-auto lg:ml-32 relative z-10 py-12 md:py-32">
+      <div tw="max-w-4xl mx-auto  xl:ml-32 relative z-10 py-12 lg:py-32">
         <h1 tw="px-4 md:px-0 font-serif font-extrabold text-5xl lg:text-6xl text-red-600 flex flex-col md:flex-row justify-between items-start mb-8">
           <strong className="headline">Hallmark Movie Bingo!</strong>
           <button
