@@ -40,7 +40,9 @@ const Background = () => {
 
           const opacity = 1 - Math.random() * 0.5;
 
-          return <Tree right={right} bottom={bottom} opacity={opacity} />;
+          return (
+            <Tree key={right} right={right} bottom={bottom} opacity={opacity} />
+          );
         })}
       </div>
     </div>

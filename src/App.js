@@ -19,7 +19,6 @@ function App() {
     "animation-enabled",
     true
   );
-  const refresh = () => setState(getInitialState());
 
   return (
     <div tw="flex flex-col min-h-screen justify-evenly bg-gradient-to-b to-lightBlue-200 from-lightBlue-800 relative">
@@ -34,19 +33,6 @@ function App() {
           >
             Hallmark Movie Bingo!
           </strong>
-          <button
-            tw="block my-6 md:my-0 order-first md:order-last"
-            type="button"
-            onClick={() => {
-              if (confirm("Are you sure you want to refresh your tiles?"))
-                refresh();
-            }}
-            aria-label="Refresh tiles?"
-          >
-            <span role="img" aria-label="Refresh icon">
-              🔄
-            </span>
-          </button>
         </h1>
 
         <p tw="text-lg md:text-2xl text-green-300 lg:text-white mb-12  px-4 md:px-0">
