@@ -11,9 +11,14 @@ import Background from "./components/Background";
 import Board from "./components/Board";
 import Head from "./components/Head";
 import Snow from "./components/Snow";
+import AnimationToggle from "./components/AnimationToggle";
 
 function App() {
   const [state, setState] = useLocalStorage("state", getInitialState());
+  const [animationEnabled, setAnimationEnabled] = useLocalStorage(
+    "animation-enabled",
+    true
+  );
   const refresh = () => setState(getInitialState());
 
   return (
@@ -23,7 +28,12 @@ function App() {
 
       <div tw="max-w-4xl mx-auto  xl:ml-32 relative z-10 py-12 lg:py-32">
         <h1 tw="px-4 md:px-0 font-serif font-extrabold text-5xl lg:text-6xl text-red-600 flex flex-col md:flex-row justify-between items-start mb-8">
-          <strong className="headline">Hallmark Movie Bingo!</strong>
+          <strong
+            className="headline"
+            css={[!animationEnabled && `animation: none !important`]}
+          >
+            Hallmark Movie Bingo!
+          </strong>
           <button
             tw="block my-6 md:my-0 order-first md:order-last"
             type="button"
@@ -140,11 +150,20 @@ function App() {
               .
             </span>
           </p>
+          <p tw="text-blue-900 mt-12">
+            <strong tw="block">Animations killing your battery?</strong>
+            <span tw="text-sm">
+              <AnimationToggle
+                enabled={animationEnabled}
+                set={setAnimationEnabled}
+              />
+            </span>
+          </p>
         </div>
       </div>
 
       <Background />
-      <Snow />
+      {animationEnabled ? <Snow /> : ""}
     </div>
   );
 }
