@@ -49,25 +49,6 @@ function App() {
             <span tw="text-sm">
               This is a silly game to play when watching crappy holiday movies
               on netflix.
-              <br />
-              This is a copy of&nbsp;
-              <a
-                href="https://tomrasmussen.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Tom Rasmussen
-              </a>
-              &apos;s awesome&nbsp;
-              <a
-                href="https://holidaymoviebingo.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Holiday Movie Bingo
-              </a>
-              &nbsp;game. This is basically just a pretty skin on top of his
-              idea &amp; tiles (although I've added a bunch more tiles).
             </span>
           </p>
           <p tw="text-blue-900 mt-12">
