@@ -144,10 +144,14 @@ const highNumbers = {
   4: "700",
 };
 
-export const getColorClass = (row, column, active) => {
+export const getColorClass = (row, column, active, winner) => {
   const color = colors[row];
-  const bgNumber = active ? highNumbers[column] : lowNumbers[column];
-  const textNumber = active ? 100 : highNumbers[column];
+  const bgNumber = active
+    ? winner ? 0 : highNumbers[column]
+    : lowNumbers[column];
+  const textNumber = active
+    ? winner ? 0 : 100 
+    : highNumbers[column];
 
   return `bg-${color}-${bgNumber}  text-${color}-${textNumber}`;
 };

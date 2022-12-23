@@ -19,6 +19,7 @@ function App() {
     "animation-enabled",
     true
   );
+  if (!Array.isArray(state)) setState(getInitialState());
 
   return (
     <div tw="flex flex-col min-h-screen justify-evenly bg-gradient-to-b to-lightBlue-200 from-lightBlue-800 relative">
