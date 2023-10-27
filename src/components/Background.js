@@ -1,37 +1,30 @@
 import React from "react";
-import tw, { styled, css } from "twin.macro";
 
 const Background = () => {
   return (
-    <div tw="fixed -bottom-32 md:bottom-0 right-0 left-0 z-0  hidden 2xs:block">
+    <div className="fixed -bottom-32 md:bottom-0 right-0 left-0 z-0  hidden 2xs:block">
       {/** Big hill */}
-      <div tw="relative h-36 w-full bg-white">
+      <div className="relative h-36 w-full bg-white">
         &nbsp;
         <div
-          className="hill"
-          css={[
-            tw`absolute bottom-full z-10`,
-            css`
-              min-width: 800px;
-              right: -5%;
-            `,
-            tw`bg-white w-full h-96`,
-            tw`transform translate-x-1/4`,
-            rounded,
-          ]}
+          className={[
+            "hill",
+            `absolute bottom-full z-10`,
+            `min-w-[800px] right-[-5%]`,
+            `bg-white w-full h-96`,
+            `transform translate-x-1/4`,
+            "rounded",
+          ].join(" ")}
         ></div>
         {/** Little hill */}
         <div
-          className="hill"
-          css={[
-            tw`absolute -left-1/4 bottom-full z-10`,
-            tw`bg-white w-full h-96`,
-            css`
-              min-width: 800px;
-              right: -5%;
-            `,
-            rounded,
-          ]}
+          className={[
+            "hill",
+            `absolute -left-1/4 bottom-full z-10`,
+            `bg-white w-full h-96`,
+            `min-w-[800px] right[-5%]`,
+            "rounded",
+          ].join(" ")}
         ></div>
         {/** Trees */}
         {[...Array(20)].map((_empty, index) => {
@@ -41,7 +34,12 @@ const Background = () => {
           const opacity = 1 - Math.random() * 0.5;
 
           return (
-            <Tree key={right} right={right} bottom={bottom} opacity={opacity} />
+            <Tree2
+              key={right}
+              right={right}
+              bottom={bottom}
+              opacity={opacity}
+            />
           );
         })}
       </div>
@@ -49,23 +47,39 @@ const Background = () => {
   );
 };
 
-const Tree = styled.div(
-  ({ right = 400, bottom = 340, height = 300, opacity = 1 }) => [
-    tw`absolute right-32 bottom-96 z-0`,
-    tw`bg-gray-300 text-gray-300`,
-    `height: ${height}px;`,
-    `width: ${height}px;`,
-    `transform: scaleX(0.22) rotate(45deg);`,
-    `filter: drop-shadow(-20px -20px 10px currentColor);`,
-    `opacity: ${opacity};`,
-    right && `right: ${right}px;`,
-    bottom && `bottom: ${bottom}px;`,
-  ]
+const Tree2 = ({ right = "", bottom = "", opacity = "" }) => (
+  <div
+    className={[
+      `absolute right-32 bottom-96 z-0`,
+      `bg-gray-300 text-gray-300`,
+      `opacity: ${opacity};`,
+    ]
+      .filter(Boolean)
+      .join(" ")}
+    style={{
+      transform: `scaleX(0.22) rotate(45deg)`,
+      filter: `drop-shadow(-20px -20px 10px currentColor)`,
+      right: `${right}px`,
+      bottom: `${bottom}px`,
+      opacity,
+      width: "300px",
+      height: "300px",
+    }}
+  />
 );
 
-const rounded = css`
-  border-radius: 50% 50% 0% 0 / 100% 100% 0 0;
-  box-shadow: 0 0 10px 10px white;
-`;
+// const Tree = styled.div(
+//   ({ right = 400, bottom = 340, height = 300, opacity = 1 }) => [
+//     tw`absolute right-32 bottom-96 z-0`,
+//     tw`bg-gray-300 text-gray-300`,
+//     `height: ${height}px;`,
+//     `width: ${height}px;`,
+//     `transform: scaleX(0.22) rotate(45deg);`,
+//     `filter: drop-shadow(-20px -20px 10px currentColor);`,
+//     `opacity: ${opacity};`,
+//     right && `right: ${right}px;`,
+//     bottom && `bottom: ${bottom}px;`,
+//   ]
+// );
 
 export default Background;

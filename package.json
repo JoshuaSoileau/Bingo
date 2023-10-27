@@ -14,8 +14,7 @@
     "react-scripts": "^5.0.1",
     "styled-components": "^5.2.1",
     "styled-jsx": "^5.1.2",
-    "tailwindcss": "^3.3.5",
-    "twin.macro": "^3.4.0"
+    "tailwindcss": "^3.3.5"
   },
   "scripts": {
     "dev:styles": "tailwind build ./src/styles/index.css -o ./src/styles/tailwind.css",
@@ -43,11 +42,5 @@
   "devDependencies": {
     "customize-cra": "^0.9.1",
     "react-app-rewired": "^2.1.5"
-  },
-  "babelMacros": {
-    "twin": {
-      "config": "./tailwind.config.js",
-      "preset": "styled-components"
-    }
   }
 }

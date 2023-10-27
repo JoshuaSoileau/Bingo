@@ -121,37 +121,131 @@ const colors = [
   "test test tes ",
 ];
 
-const lowNumbers = {
-  0: "200",
-  1: "100",
-  2: "50",
-  3: "100",
-  4: "200",
-};
-// const lowNumbers = {
-//   0: "50",
-//   1: "100",
-//   2: "200",
-//   3: "100",
-//   4: "50",
-// };
-
-const highNumbers = {
-  0: "700",
-  1: "800",
-  2: "900",
-  3: "800",
-  4: "700",
+const config = {
+  teal: {
+    0: {
+      active: "bg-teal-700 text-teal-200",
+      inactive: "bg-teal-200 text-teal-800",
+    },
+    1: {
+      active: "bg-teal-800 text-teal-100",
+      inactive: "bg-teal-100 text-teal-800",
+    },
+    2: {
+      active: "bg-teal-900 text-teal-50",
+      inactive: "bg-teal-50 text-teal-900",
+    },
+    3: {
+      active: "bg-teal-800 text-teal-100",
+      inactive: "bg-teal-100 text-teal-800",
+    },
+    4: {
+      active: "bg-teal-700 text-teal-200",
+      inactive: "bg-teal-200 text-teal-700",
+    },
+  },
+  cyan: {
+    0: {
+      active: "bg-cyan-700 text-cyan-200",
+      inactive: "bg-cyan-200 text-cyan-800",
+    },
+    1: {
+      active: "bg-cyan-800 text-cyan-100",
+      inactive: "bg-cyan-100 text-cyan-800",
+    },
+    2: {
+      active: "bg-cyan-900 text-cyan-50",
+      inactive: "bg-cyan-50 text-cyan-900",
+    },
+    3: {
+      active: "bg-cyan-800 text-cyan-100",
+      inactive: "bg-cyan-100 text-cyan-800",
+    },
+    4: {
+      active: "bg-cyan-700 text-cyan-200",
+      inactive: "bg-cyan-200 text-cyan-700",
+    },
+  },
+  lightBlue: {
+    0: {
+      active: "bg-lightBlue-700 text-lightBlue-200",
+      inactive: "bg-lightBlue-200 text-lightBlue-800",
+    },
+    1: {
+      active: "bg-lightBlue-800 text-lightBlue-100",
+      inactive: "bg-lightBlue-100 text-lightBlue-800",
+    },
+    2: {
+      active: "bg-lightBlue-900 text-lightBlue-50",
+      inactive: "bg-lightBlue-50 text-lightBlue-900",
+    },
+    3: {
+      active: "bg-lightBlue-800 text-lightBlue-100",
+      inactive: "bg-lightBlue-100 text-lightBlue-800",
+    },
+    4: {
+      active: "bg-lightBlue-700 text-lightBlue-200",
+      inactive: "bg-lightBlue-200 text-lightBlue-700",
+    },
+  },
+  blue: {
+    0: {
+      active: "bg-blue-700 text-blue-200",
+      inactive: "bg-blue-200 text-blue-800",
+    },
+    1: {
+      active: "bg-blue-800 text-blue-100",
+      inactive: "bg-blue-100 text-blue-800",
+    },
+    2: {
+      active: "bg-blue-900 text-blue-50",
+      inactive: "bg-blue-50 text-blue-900",
+    },
+    3: {
+      active: "bg-blue-800 text-blue-100",
+      inactive: "bg-blue-100 text-blue-800",
+    },
+    4: {
+      active: "bg-blue-700 text-blue-200",
+      inactive: "bg-blue-200 text-blue-700",
+    },
+  },
+  indigo: {
+    0: {
+      active: "bg-indigo-700 text-indigo-200",
+      inactive: "bg-indigo-200 text-indigo-800",
+    },
+    1: {
+      active: "bg-indigo-800 text-indigo-100",
+      inactive: "bg-indigo-100 text-indigo-800",
+    },
+    2: {
+      active: "bg-indigo-900 text-indigo-50",
+      inactive: "bg-indigo-50 text-indigo-900",
+    },
+    3: {
+      active: "bg-indigo-800 text-indigo-100",
+      inactive: "bg-indigo-100 text-indigo-800",
+    },
+    4: {
+      active: "bg-indigo-700 text-indigo-200",
+      inactive: "bg-indigo-200 text-indigo-700",
+    },
+  },
 };
 
 export const getColorClass = (row, column, active) => {
   const color = colors[row];
-  const bgNumber = active ? highNumbers[column] : lowNumbers[column];
-  const textNumber = active ? 100 : highNumbers[column];
 
-  return `bg-${color}-${bgNumber}  text-${color}-${textNumber}`;
+  const className =
+    config[color][column][active ? "active" : "inactive"] ||
+    "Match not found: " + color + " " + column + " " + active;
+
+  return className;
 };
 
-export default {
+const exports = {
   getColorClass,
 };
+
+export default exports;

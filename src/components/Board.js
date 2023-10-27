@@ -1,6 +1,5 @@
 /* eslint-disable no-restricted-globals */
 import React from "react";
-import "twin.macro";
 import { getColorClass } from "../colors";
 import { classnames, getInitialState } from "../utils";
 
@@ -15,9 +14,9 @@ const Board = ({ state, setState }) => {
 
   return (
     <div className="md:rounded-lg overflow-hidden">
-      <div tw="bg-red-200  flex justify-end">
+      <div className="bg-red-200  flex justify-end">
         <button
-          tw="inline-flex items-center  text-red-800  text-sm  p-2 px-6 bg-red-300"
+          className="inline-flex items-center  text-red-800  text-sm  p-2 px-6 bg-red-300"
           type="button"
           onClick={() => {
             if (confirm("Are you sure you want to refresh your tiles?"))
@@ -27,7 +26,7 @@ const Board = ({ state, setState }) => {
         >
           refresh
           <span
-            tw="inline-flex ml-4  text-xl font-bold "
+            className="inline-flex ml-4  text-xl font-bold "
             role="img"
             aria-label="Refresh icon"
           >
@@ -46,8 +45,6 @@ const Board = ({ state, setState }) => {
             "text-xs md:text-sm lg:text-normal",
             "p-2 sm:p-4 md:py-8 lg:py-12",
             "focus:outline-none",
-            !value && "bg-gray-100",
-            value && "bg-gray-800 text-white",
             getColorClass(row, column, value)
           );
 
